@@ -5,13 +5,13 @@
 body {
     margin: 0;
     background-color: #f3ebd7;
+    font-family: 'Fredoka One', sans-serif;
 }
 .container {
     margin: 0 auto;
     max-width: 860px;
 }
 .akardion {
-    height: 100vh;
     padding: 1em
 }
 .akardion__item:first-of-type{
@@ -28,12 +28,13 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-size: 1.1rem;
 }
 .akardion__icon{
     opacity: 0;
 }
 .akardion__content{
-    display: flex;
+    display: none;
     text-align: center;
     justify-content: center;
     max-height: 200px;
@@ -46,5 +47,5 @@ body {
     display: none;
 }
 .akardion__checkbox:checked + .akardion__content{
-    display: none;
+    display: flex;
 }
