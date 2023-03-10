@@ -12,7 +12,7 @@ body {
     max-width: 860px;
 }
 .akardion {
-    padding: 1em
+    padding: 1rem;
 }
 .akardion__item:first-of-type{
     border-top: 1px solid #6e6e6e;
@@ -20,8 +20,12 @@ body {
 .akardion:hover .akardion__icon{
     opacity: 1;
 }
+.akardion:hover label{
+    color: rgb(167 148 58);
+}
 .akardion__item {
-    padding: 1em 1.5em;
+    display: flex;
+    flex-direction: column-reverse;
     border-bottom: 1px solid #6e6e6e;
 }
 .akardion__text {
@@ -29,15 +33,29 @@ body {
     justify-content: space-between;
     align-items: center;
     font-size: 1.1rem;
+    cursor: pointer;
+    padding: 1em 1.5em;
+    transition: color .3s cubic-bezier(0.39, 0.575, 0.565, 1);
 }
 .akardion__icon{
     opacity: 0;
+    transition: .3s cubic-bezier(0.39, 0.575, 0.565, 1)
 }
 .akardion__content{
-    display: none;
+    display: flex;
     text-align: center;
     justify-content: center;
-    max-height: 200px;
+    height: 0;
+    opacity: 0;
+    cursor: pointer;
+    transition: .3s cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+.akardion__content:active > img {
+    transition: .3s cubic-bezier(0.39, 0.575, 0.565, 1);
+    opacity: .5;
+}
+.akardion__content:active + .akardion__text {
+    color: black;
 }
 .akardion__content > img {
     object-fit: contain;
@@ -46,6 +64,15 @@ body {
 .akardion__checkbox{
     display: none;
 }
-.akardion__checkbox:checked + .akardion__content{
-    display: flex;
+.akardion__checkbox:checked + .akardion__content,
+.akardion__item:hover .akardion__content{
+    height: 40vh;
+    margin-bottom: 1em;
+    opacity: 1;
+}
+.akardion__checkbox:checked ~ label {
+    color: rgb(167 148 58);
+}
+.akardion__checkbox:checked ~ label > .akardion__icon{
+    transform: rotate(180deg);
 }
