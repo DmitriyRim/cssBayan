@@ -1,0 +1,50 @@
+:root {
+    box-sizing: border-box;
+    font-size: calc(1vw +.6em);
+}
+body {
+    margin: 0;
+    background-color: #f3ebd7;
+}
+.container {
+    margin: 0 auto;
+    max-width: 860px;
+}
+.akardion {
+    height: 100vh;
+    padding: 1em
+}
+.akardion__item:first-of-type{
+    border-top: 1px solid #6e6e6e;
+}
+.akardion:hover .akardion__icon{
+    opacity: 1;
+}
+.akardion__item {
+    padding: 1em 1.5em;
+    border-bottom: 1px solid #6e6e6e;
+}
+.akardion__text {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.akardion__icon{
+    opacity: 0;
+}
+.akardion__content{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    max-height: 200px;
+}
+.akardion__content > img {
+    object-fit: contain;
+    object-position: center;
+}
+.akardion__checkbox{
+    display: none;
+}
+.akardion__checkbox:checked + .akardion__content{
+    display: none;
+}
