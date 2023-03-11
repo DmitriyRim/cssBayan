@@ -9,19 +9,19 @@ body {
 }
 .container {
     margin: 0 auto;
-    max-width: 860px;
+    max-width: 53rem;
 }
 .akardion {
     padding: 1rem;
 }
 .akardion__item:first-of-type{
-    border-top: 1px solid #6e6e6e;
+    border-top: .1em solid #6e6e6e;
 }
 
 .akardion__item {
     display: flex;
     flex-direction: column-reverse;
-    border-bottom: 1px solid #6e6e6e;
+    border-bottom: .1em solid #6e6e6e;
 }
 .akardion__text {
     display: flex;
