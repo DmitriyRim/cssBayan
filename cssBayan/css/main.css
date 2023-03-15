@@ -1,0 +1,108 @@
+:root {
+    box-sizing: border-box;
+    font-size: 1.1rem;
+}
+body {
+    margin: 0;
+    background-color: #f3ebd7;
+    font-family: 'Fredoka One', sans-serif;
+}
+.container {
+    margin: 0 auto;
+    max-width: 53rem;
+}
+.akardion {
+    padding: 1rem;
+}
+.akardion__item:first-of-type{
+    border-top: .1em solid #6e6e6e;
+}
+
+.akardion__item {
+    display: flex;
+    flex-direction: column-reverse;
+    border-bottom: .1em solid #6e6e6e;
+}
+.akardion__text {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    font-size: 1.1rem;
+    cursor: pointer;
+    padding: 1em 1.5em;
+    transition: color .3s cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+.akardion__icon{
+    opacity: 1;
+    transition: .3s cubic-bezier(0.39, 0.575, 0.565, 1)
+}
+.akardion__content{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    flex-basis: 100%;
+    height: 0;
+    opacity: 0;
+    cursor: pointer;
+    transition: .3s cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+.akardion__text:active .akardion__content > img {
+    transition: .3s cubic-bezier(0.39, 0.575, 0.565, 1);
+    opacity: .5;
+}
+.akardion__text > span {
+    transition: .3s cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+.akardion__text:active  span {
+    color: black;
+}
+.akardion__content > img {
+    object-fit: contain;
+    object-position: center;
+    width: 100%;
+}
+.akardion__checkbox{
+    display: none;
+}
+.akardion__checkbox:checked ~ label > .akardion__content{
+    height: 40vh;
+    margin-bottom: 1em;
+    opacity: 1;
+}
+.akardion__checkbox:checked ~ label {
+    color: rgb(167 148 58);
+}
+.akardion__checkbox:checked ~ label > .akardion__icon{
+    transform: rotate(180deg);
+}
+
+@media (any-hover: hover) {
+    .akardion__item:hover .akardion__icon{
+        transform: rotate(180deg);
+    }
+    .akardion__item:hover .akardion__content{
+        height: 40vh;
+        margin-bottom: 1em;
+        opacity: 1;
+    }
+    .akardion:hover .akardion__icon{
+        opacity: 1;
+    }
+    .akardion:hover label{
+        color: rgb(167 148 58);
+    }
+    .akardion__icon{
+        opacity: 0;
+    }
+}
+@media screen and (max-width: 880px) {
+    :root {
+        font-size: calc(1vw + .6em);
+    }
+}
+@media screen and (max-width: 380px) {
+    :root {
+        font-size: calc(1vw + .6em);
+    }
+}
